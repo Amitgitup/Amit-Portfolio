@@ -1,0 +1,180 @@
+/* ── Certifications Section ── */
+
+.cert-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+/* The GSAP-animated vertical line — sits between left and right columns */
+.cert-timeline {
+    position: absolute !important;
+    left: 42% !important;
+    /* sits right after the left column ends */
+    top: 0 !important;
+    transform: none !important;
+    width: 3px !important;
+    height: 100% !important;
+    background-image: linear-gradient(to top,
+            #14b8a6 20%,
+            var(--accentColor) 50%,
+            transparent 95%) !important;
+    max-height: 0%;
+}
+
+.cert-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Each certification row */
+.cert-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: 55px;
+    position: relative;
+    padding-top: 5px;
+}
+
+/* The dot — floats on the dividing line between columns */
+.cert-dot {
+    position: absolute;
+    left: calc(42% - 6px);
+    /* centered on the 3px line */
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.cert-dot-inner {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #0a0e17;
+    border: 2px solid var(--accentColor);
+    flex-shrink: 0;
+    box-shadow: 0 0 8px rgba(94, 234, 212, 0.4);
+}
+
+.cert-connector {
+    width: 2px;
+    background-color: #3f3f46;
+    min-height: calc(100% + 55px);
+    margin-top: 4px;
+    position: absolute;
+    top: 18px;
+}
+
+/* Left column: title, issuer, year */
+.cert-left {
+    width: 40%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-right: 30px;
+}
+
+.cert-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.cert-issuer {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--accentColor);
+    margin: 0;
+    text-transform: none;
+    letter-spacing: 0.3px;
+}
+
+.cert-year {
+    font-size: 13px;
+    color: #71717a;
+    margin: 0;
+}
+
+/* Spacer to account for the line width */
+.cert-divider-space {
+    width: 3px;
+    flex-shrink: 0;
+}
+
+/* Right column: description + link */
+.cert-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 35px;
+}
+
+.cert-description {
+    font-size: 16px;
+    font-weight: 300;
+    color: #e4e4e7;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.cert-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--accentColor);
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.cert-link:hover {
+    opacity: 0.75;
+    color: var(--accentColor);
+}
+
+/* ── Responsive ── */
+@media only screen and (max-width: 900px) {
+    .cert-timeline {
+        left: 0 !important;
+    }
+
+    .cert-dot {
+        left: -8px;
+    }
+
+    .cert-card {
+        flex-direction: column;
+        gap: 15px;
+        padding-left: 25px;
+    }
+
+    .cert-left {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .cert-right {
+        width: 100%;
+        padding-left: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .cert-title {
+        font-size: 17px;
+    }
+
+    .cert-description {
+        font-size: 14px;
+    }
+}
