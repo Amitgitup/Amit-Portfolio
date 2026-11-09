@@ -46,3 +46,7 @@ backup/
 tmp/
 *.tmp
 *.bak
+
+# Accidentally committed files - excluded from tracking
+public/images/acne.png
+public/images/mindmirrorvideo.mp4

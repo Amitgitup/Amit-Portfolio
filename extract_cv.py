@@ -9,5 +9,5 @@ def extract_text(pdf_path):
         return text
 
 if __name__ == "__main__":
-    cv_path = "Inam Ul Hassan's CV.pdf"
+    cv_path = "public/CV.pdf"
     print(extract_text(cv_path))
